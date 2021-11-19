@@ -2,33 +2,49 @@
   list-style: none;
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
+}
 
-  width: 100%;
+@media screen and (min-width: 768px) {
+  .history-item {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
 .domain-and-icon-container {
   display: flex;
-  align-items: center;
+
   justify-content: space-between;
+  width: 100%;
 }
 .domain-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20px;
 }
 time {
   color: #475569;
   font-size: 14px;
   font-family: 'Roboto';
+  margin-right: 5px;
 }
 .logos-each-image {
   height: 30px;
   width: 30px;
-  margin-right: 14px;
+  margin-right: 10px;
 }
 .title {
   color: #475569;
   font-size: 14px;
   font-family: 'Roboto';
   font-weight: 800;
+  margin-right: 10px;
 }
 .domain-name {
   color: #64748b;
@@ -39,6 +55,7 @@ time {
   outline: none;
   border: none;
   cursor: pointer;
+  background-color: transparent;
 }
 .delete-icon {
   background-color: transparent;
