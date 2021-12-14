@@ -15,8 +15,8 @@ const HistoryItem = props => {
         <div className="domain-container">
           <p className="time">{timeAccessed}</p>
           <div className="logo-container">
-            <img src={logoUrl} alt="logoUrl" className="logos-each-image" />
-            <h1 className="title">{title}</h1>
+            <img src={logoUrl} alt="domain logo" className="logos-each-image" />
+            <p className="title">{title}</p>
             <p className="domain-name">{domainUrl}</p>
           </div>
         </div>

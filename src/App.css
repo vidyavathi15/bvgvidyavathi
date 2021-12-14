@@ -16,26 +16,28 @@ body {
   flex-direction: column;
 }
 .nav-bar {
-  display: flex;
   background-color: #3367d6;
   padding: 18px;
   width: 100%;
 }
+
 .logo-and-search-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .logo-image {
   height: 30px;
   width: 130px;
-  padding-left: 10px;
-  margin-right: 560px;
 }
+
 .search-input-container {
   display: flex;
-
-  width: 50%;
-  max-width: 550px;
+  align-self: center;
+}
+@media screen and (min-width: 768px) {
+  .search-input-container {
+    width: 50%;
+  }
 }
 .search-icon {
   background-color: #2850a7;
@@ -58,6 +60,7 @@ body {
   margin-left: 2px;
 
   color: #ffffff;
+
   font-size: 14px;
   font-family: 'Roboto';
   outline: none;

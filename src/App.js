@@ -91,7 +91,7 @@ class App extends Component {
 
   renderEmptyHistory = () => (
     <div className="no-history-empty-container">
-      <p className="empty-view-txt">There is no history to Show</p>
+      <p className="empty-view-txt">There is no history to show</p>
     </div>
   )
 
@@ -114,26 +114,35 @@ class App extends Component {
     this.setState({searchInput: event.target.value})
   }
 
-  renderSearchResultsView = () => {
-    const {historyList, searchInput} = this.state
+  getSearchResults = () => {
+    const {searchInput, historyList} = this.state
 
-    const searchResults = historyList.filter(searchInput)
-    if (searchResults === '') {
-      this.callingEmptyView()
-    } else {
-      return searchResults
-    }
+    const results = historyList.filter(eachHistory =>
+      eachHistory.title.toLowerCase().includes(searchInput.toLowerCase()),
+    )
+
+    return results
+  }
+
+  renderSearchResultsView = () => {
+    const searchResults = this.getSearchResults()
 
     return (
-      <ul className="history-list">
-        {searchResults.map(each => (
-          <HistoryItem
-            key={each.id}
-            historyDetails={each}
-            deleteHistory={this.deleteHistory}
-          />
-        ))}
-      </ul>
+      <>
+        {searchResults.length === 0 ? (
+          this.callingEmptyView()
+        ) : (
+          <ul className="history-list">
+            {searchResults.map(each => (
+              <HistoryItem
+                key={each.id}
+                historyDetails={each}
+                deleteHistory={this.deleteHistory}
+              />
+            ))}
+          </ul>
+        )}
+      </>
     )
   }
 
